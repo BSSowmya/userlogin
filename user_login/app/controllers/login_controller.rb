@@ -13,9 +13,7 @@ end
     else 
         if u.authenticate(params[:password])
             session[:current_user_id] = u.id
-            puts "Logged in successfully"
-            b = Book.all
-            render json:b
+            render json: "Logged in successfully"
         else
             render json: "Authentication failed"
         end
