@@ -2,8 +2,8 @@ require 'bcrypt'
 class UserController < ApplicationController
     skip_before_action :verify_authenticity_token
 def index
- v = User.all
- render json:v
+current_user = User.find_by_id(session[:current_user_id])
+render json: current_user
 end
 
 
